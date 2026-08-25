@@ -49,7 +49,7 @@
             status: "Buyer view",
             heroEyebrow: "Managed project delivery",
             heroTitle: "Tell us what<br>you need. <em>Get it done.</em>",
-            heroLede: "Borage turns a plain-language request into a clear project, confirms the right professional, and manages the work all the way to an accepted result.",
+            heroLede: "Tell Borage what you need. We define the project, find the right professional, manage the work, and check the result before you approve it.",
             heroPrimary: "Describe your project",
             heroPrimaryHref: "#describe",
             heroReassurance: "No job post. No candidate search. No obligation to proceed.",

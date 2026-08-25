@@ -7,4 +7,4 @@ Allow: /
 User-agent: GPTBot
 Disallow: /
 
-Sitemap: https://useborage.com/sitemap.xml
+Sitemap: https://www.useborage.com/sitemap.xml

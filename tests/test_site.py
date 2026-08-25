@@ -84,7 +84,7 @@ class SiteQualityTests(unittest.TestCase):
                 self.assertEqual(page.h1_count, 1)
                 self.assertTrue(20 <= len(page.title.strip()) <= 70)
                 self.assertTrue(50 <= len(page.description or "") <= 180)
-                expected = "https://useborage.com/" if route == "/" else f"https://useborage.com{route}"
+                expected = "https://www.useborage.com/" if route == "/" else f"https://www.useborage.com{route}"
                 self.assertEqual(page.canonical, expected)
                 titles.add(page.title.strip())
                 descriptions.add(page.description)
@@ -110,7 +110,7 @@ class SiteQualityTests(unittest.TestCase):
         namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         locations = {node.text for node in tree.findall("sm:url/sm:loc", namespace)}
         expected = {
-            "https://useborage.com/" if route == "/" else f"https://useborage.com{route}"
+            "https://www.useborage.com/" if route == "/" else f"https://www.useborage.com{route}"
             for route in PUBLIC_PAGES
         }
         self.assertEqual(locations, expected)
@@ -118,10 +118,11 @@ class SiteQualityTests(unittest.TestCase):
     def test_robots_and_vercel_configuration(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("User-agent: *\nAllow: /", robots)
-        self.assertIn("Sitemap: https://useborage.com/sitemap.xml", robots)
+        self.assertIn("Sitemap: https://www.useborage.com/sitemap.xml", robots)
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         self.assertFalse(config["trailingSlash"])
-        self.assertTrue(any(item.get("has", [{}])[0].get("value") == "www.useborage.com" for item in config["redirects"]))
+        self.assertFalse(any(item.get("has") for item in config["redirects"]))
+        self.assertTrue(any(item.get("source") == "/sign-in" for item in config["redirects"]))
         header_keys = {item["key"] for rule in config["headers"] for item in rule["headers"]}
         self.assertIn("X-Content-Type-Options", header_keys)
         self.assertIn("Referrer-Policy", header_keys)

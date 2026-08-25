@@ -1,6 +1,6 @@
 # Use Borage landing page
 
-Static, dependency-free marketing site for [useborage.com](https://useborage.com). It is designed for Vercel and kept separate from the Borage application deployed at `app.useborage.com`.
+Static, dependency-free marketing site for [useborage.com](https://www.useborage.com). It is designed for Vercel and kept separate from the Borage application deployed at `app.useborage.com`.
 
 ## Local preview
 
@@ -21,11 +21,11 @@ python3 -m json.tool vercel.json >/dev/null
 
 Import `trueProgrammer/useborage-landing` into Vercel as a static project. Leave the root directory as `.`, choose the **Other** framework preset, and leave the build command and output directory empty.
 
-Attach `useborage.com` and `www.useborage.com` to the project. The configuration redirects `www` to the apex domain and sends `/sign-in` to the AWS-hosted application at `https://app.useborage.com/sign-in`.
+Attach `useborage.com` and `www.useborage.com` to the project. Keep `www.useborage.com` assigned to Production and redirect the apex domain to `www` in Vercel’s domain settings. The repository sends `/sign-in` to the AWS-hosted application at `https://app.useborage.com/sign-in`.
 
 After the production domain is live:
 
-1. Verify `https://useborage.com/robots.txt` and `https://useborage.com/sitemap.xml`.
+1. Verify `https://www.useborage.com/robots.txt` and `https://www.useborage.com/sitemap.xml`.
 2. Add the domain property in Google Search Console and submit `/sitemap.xml`.
 3. Add the site in Bing Webmaster Tools and submit the same sitemap.
 4. Inspect the home page and each service URL after the first crawl.

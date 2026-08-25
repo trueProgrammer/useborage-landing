@@ -121,14 +121,14 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn("Sitemap: https://www.useborage.com/sitemap.xml", robots)
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         self.assertFalse(config["trailingSlash"])
-        host_redirects = [item for item in config["redirects"] if item.get("has")]
-        self.assertEqual(len(host_redirects), 1)
-        self.assertEqual(host_redirects[0]["has"][0]["value"], "useborage-landing.vercel.app")
-        self.assertEqual(host_redirects[0]["destination"], "https://www.useborage.com/:path*")
+        self.assertFalse(any(item.get("has") for item in config["redirects"]))
         self.assertTrue(any(item.get("source") == "/sign-in" for item in config["redirects"]))
         header_keys = {item["key"] for rule in config["headers"] for item in rule["headers"]}
         self.assertIn("X-Content-Type-Options", header_keys)
         self.assertIn("Referrer-Policy", header_keys)
+        robot_rules = [rule for rule in config["headers"] if any(item["key"] == "X-Robots-Tag" for item in rule["headers"])]
+        self.assertEqual(len(robot_rules), 1)
+        self.assertEqual(robot_rules[0]["has"][0]["value"], "useborage-landing.vercel.app")
 
     def test_public_claims_match_current_boundaries(self):
         integration = (ROOT / "integrations/chatgpt-claude-mcp.html").read_text(encoding="utf-8")

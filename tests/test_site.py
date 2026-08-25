@@ -121,7 +121,10 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn("Sitemap: https://www.useborage.com/sitemap.xml", robots)
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         self.assertFalse(config["trailingSlash"])
-        self.assertFalse(any(item.get("has") for item in config["redirects"]))
+        host_redirects = [item for item in config["redirects"] if item.get("has")]
+        self.assertEqual(len(host_redirects), 1)
+        self.assertEqual(host_redirects[0]["has"][0]["value"], "useborage-landing.vercel.app")
+        self.assertEqual(host_redirects[0]["destination"], "https://www.useborage.com/:path*")
         self.assertTrue(any(item.get("source") == "/sign-in" for item in config["redirects"]))
         header_keys = {item["key"] for rule in config["headers"] for item in rule["headers"]}
         self.assertIn("X-Content-Type-Options", header_keys)

@@ -4,6 +4,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "useborage-landing.vercel.app"
+        }
+      ],
+      "destination": "https://www.useborage.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/sign-in",
       "destination": "https://app.useborage.com/sign-in",
       "permanent": false

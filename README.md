@@ -21,7 +21,7 @@ python3 -m json.tool vercel.json >/dev/null
 
 Import `trueProgrammer/useborage-landing` into Vercel as a static project. Leave the root directory as `.`, choose the **Other** framework preset, and leave the build command and output directory empty.
 
-Attach `useborage.com` and `www.useborage.com` to the project. Keep `www.useborage.com` assigned to Production and redirect the apex domain to `www` in Vercel’s domain settings. The repository sends `/sign-in` to the AWS-hosted application at `https://app.useborage.com/sign-in`.
+Attach `useborage.com` and `www.useborage.com` to the project. Keep `www.useborage.com` assigned to Production and redirect the apex domain to `www` in Vercel’s domain settings. The repository redirects the default Vercel subdomain to `www` and sends `/sign-in` to the AWS-hosted application at `https://app.useborage.com/sign-in`.
 
 After the production domain is live:
 

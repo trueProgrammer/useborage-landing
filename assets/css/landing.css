@@ -331,7 +331,7 @@ body.landing-body {
     max-width: 620px;
     margin: 36px 0 0;
     color: var(--ink-soft);
-    font-size: clamp(18px, 1.6vw, 24px);
+    font-size: clamp(17px, 1.35vw, 21px);
     letter-spacing: -0.025em;
     line-height: 1.38;
 }
@@ -1481,7 +1481,7 @@ body.landing-body {
     .small-cta { padding: 10px 12px; font-size: 11px; }
     .hero-grid { min-height: 0; }
     .hero-copy h1 { font-size: clamp(44px, 13vw, 66px); }
-    .hero-lede { font-size: 18px; }
+    .hero-lede { font-size: 17px; }
     .hero-signal { min-height: 520px; }
     .signal-card { width: 62%; padding: 17px; }
     .signal-card p { font-size: 15px; }

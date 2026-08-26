@@ -147,7 +147,8 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn('<span class="brand-lockup"><small>Use</small><strong>Borage</strong></span>', homepage)
         self.assertIn("Tell Borage what you need", homepage)
         self.assertIn("Start a project", homepage)
-        self.assertIn("No job post. No profile search.", homepage)
+        for reassurance in ("No job post", "No profile search", "No obligation to proceed"):
+            self.assertIn(reassurance, homepage)
         self.assertIn('class="graphic-reassurance"', homepage)
         self.assertNotIn('class="hero-reassurance"', homepage)
         self.assertIn("The project work you", homepage)

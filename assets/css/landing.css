@@ -192,7 +192,7 @@ body.landing-body {
 }
 
 .landing-hero {
-    padding: clamp(30px, 3vw, 44px) 0 0;
+    padding: clamp(14px, 1.5vw, 24px) 0 0;
 }
 
 .audience-switcher {
@@ -643,6 +643,23 @@ body.landing-body {
 }
 .buyer-portrait::before { top: 12px; width: 19px; height: 19px; }
 .buyer-portrait i { width: 46px; height: 34px; }
+
+.buyer-person-crop {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    filter: drop-shadow(6px 7px 0 rgba(225, 227, 255, 0.9));
+}
+
+.buyer-person-crop img {
+    position: absolute;
+    top: -50px;
+    left: -2px;
+    width: 360px;
+    max-width: none;
+    height: auto;
+}
 
 .station-label { display: grid; gap: 3px; margin: 14px 0 13px; }
 .station-label small,
@@ -1739,9 +1756,8 @@ body.landing-body {
         grid-area: buyer;
         width: auto;
     }
-    .buyer-portrait { width: 52px; height: 52px; }
-    .buyer-portrait::before { top: 9px; width: 16px; height: 16px; }
-    .buyer-portrait i { width: 38px; height: 29px; }
+    .buyer-person-crop { width: 86px; height: 86px; }
+    .buyer-person-crop img { top: -40px; width: 285px; }
     .station-label { margin: 9px 0 8px; }
     .station-label strong { font-size: 15px; }
     .buyer-request { padding: 10px; }
@@ -1841,7 +1857,7 @@ body.landing-body {
     .audience-status { font-size: 7px; letter-spacing: 0.06em; }
     .audience-switcher button { gap: 7px; }
     .audience-switcher button span { font-size: 11px; }
-    .landing-hero { padding-top: 30px; }
+    .landing-hero { padding-top: 14px; }
     .hero-actions { align-items: stretch; flex-direction: column; }
     .primary-cta { min-width: 0; }
     .secondary-cta { width: fit-content; }

@@ -152,6 +152,8 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn("Running the project", homepage)
         self.assertIn("Selected by Borage", homepage)
         self.assertIn("Artwork checked", homepage)
+        self.assertIn('/assets/agentura-hero-cutout.png', homepage)
+        self.assertTrue((ROOT / "assets" / "agentura-hero-cutout.png").exists())
         self.assertNotIn('class="signal-orbit', homepage)
         self.assertNotIn("data-audience-switcher", homepage)
         self.assertNotIn("Get work done", homepage)

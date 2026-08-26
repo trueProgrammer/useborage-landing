@@ -19,7 +19,7 @@
     <link rel="canonical" href="https://www.useborage.com/">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/landing.css?v=6">
-    <link rel="stylesheet" href="/assets/css/pages.css?v=2">
+    <link rel="stylesheet" href="/assets/css/pages.css?v=3">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,6 +59,7 @@
         <nav class="landing-nav" aria-label="Main navigation">
             <a href="#outcomes">Services</a>
             <a href="/how-it-works" data-how-link>How it works</a>
+            <a class="audience-buyer-only" href="#chat">Chat + MCP</a>
             <a href="/for-professionals">For professionals</a>
         </nav>
 
@@ -93,6 +94,10 @@
                         <a class="secondary-cta" href="#work-removed">See what disappears <span aria-hidden="true">↓</span></a>
                     </div>
                     <p class="hero-reassurance" data-hero-reassurance>No job post. No candidate search. No obligation to proceed.</p>
+                    <a class="hero-chat-note audience-buyer-only" href="#chat">
+                        <span>ChatGPT · Claude · MCP</span>
+                        Bring Borage into your assistant <i aria-hidden="true">↘</i>
+                    </a>
                 </div>
 
                 <div class="hero-signal" aria-label="Borage project status" data-reveal>
@@ -405,18 +410,30 @@
             </div>
         </section>
 
-        <section class="chat-native audience-buyer-only">
+        <section class="chat-native audience-buyer-only" id="chat">
             <div class="chat-native-copy" data-reveal>
-                <p class="eyebrow"><span></span> Start where you already work</p>
-                <h2>Brief Borage<br><em>from your chat.</em></h2>
-                <p>Use Borage from ChatGPT, Claude, or another MCP-capable assistant. Turn the conversation into a project brief, answer any missing questions, review the current version, and approve sourcing. Borage opens a secure screen when a step requires it.</p>
-                <div class="page-actions"><a class="inline-link" href="/integrations/chatgpt-claude-mcp">See how the chat connection works ↗</a></div>
+                <p class="eyebrow"><span></span> Bring your own AI</p>
+                <h2>Keep the AI<br><em>you already pay for.</em></h2>
+                <p>Borage does not replace your assistant. Add Borage as a plugin or MCP connection in ChatGPT, Claude, or another compatible assistant. Describe the outcome in the chat you already use; Borage turns it into a brief, sources the right professional, and manages delivery.</p>
+                <div class="assistant-connectors" aria-label="Ways to connect Borage">
+                    <div><i aria-hidden="true">C</i><span><strong>ChatGPT</strong><small>Use with Borage</small></span></div>
+                    <div><i aria-hidden="true">A</i><span><strong>Claude</strong><small>Use with Borage</small></span></div>
+                    <div><i aria-hidden="true">M</i><span><strong>MCP assistants</strong><small>Connect through MCP</small></span></div>
+                </div>
+                <div class="page-actions"><a class="inline-link" href="/integrations/chatgpt-claude-mcp">See the plugin + MCP connection ↗</a></div>
             </div>
-            <div class="chat-native-shell" data-reveal>
-                <header><span>Connected assistant</span><span>Borage available</span></header>
-                <div class="chat-message user">We need a 14-slide sales deck from this workshop transcript and spreadsheet by October 9.</div>
-                <div class="chat-message borage">I’ve structured the audience, deliverables, source files, review rounds, and deadline. One item remains: who gives final approval?</div>
-                <div class="chat-action"><div><small>Project brief</small><strong>Ready for your approval</strong></div><span>↗</span></div>
+            <div class="chat-native-product" data-reveal>
+                <div class="chat-native-shell">
+                    <header><span>Your assistant</span><span>Borage connected · Plugin / MCP</span></header>
+                    <div class="chat-message user">We need a 14-slide sales deck from this workshop transcript and spreadsheet by October 9.</div>
+                    <div class="chat-message borage">I’ve structured the audience, deliverables, source files, review rounds, and deadline. One item remains: who gives final approval?</div>
+                    <div class="chat-action"><div><small>Project brief</small><strong>Ready for your approval</strong></div><span>↗</span></div>
+                </div>
+                <div class="chat-flow" aria-label="How work moves from chat to delivery">
+                    <div><small>01</small><strong>Describe</strong><span>In your chat</span></div>
+                    <div><small>02</small><strong>Borage runs it</strong><span>Scope · source · manage</span></div>
+                    <div><small>03</small><strong>Review</strong><span>Finished work</span></div>
+                </div>
             </div>
         </section>
 

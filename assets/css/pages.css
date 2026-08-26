@@ -437,14 +437,11 @@ html,
     border: 1px solid var(--ink);
     border-radius: 50%;
     background: var(--paper-bright);
-    font-family: var(--mono);
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 850;
 }
-.hero-chat-marks i:first-child { margin-left: 0; background: var(--dark); color: white; }
-.hero-chat-marks i:nth-child(2) { background: var(--blue); color: white; }
-.hero-chat-marks i:last-child { background: var(--acid); color: var(--ink); }
+.hero-chat-marks i:first-child { margin-left: 0; }
+.hero-chat-marks i:nth-child(2) { background: #f7e8df; }
+.hero-chat-marks i:last-child { background: var(--acid); }
+.hero-chat-marks img { display: block; width: 19px; height: 19px; }
 
 .hero-chat-copy { display: grid; gap: 2px; min-width: 0; }
 .hero-chat-copy small { color: var(--blue); font-family: var(--mono); font-size: 7px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -507,6 +504,7 @@ html,
     font-style: normal;
     font-weight: 850;
 }
+.assistant-connectors img { display: block; width: 20px; height: 20px; }
 
 .assistant-connectors > div:nth-child(2) i { background: var(--blue-soft); }
 .assistant-connectors > div:nth-child(3) i { background: var(--blue); color: white; }
@@ -670,7 +668,8 @@ html,
     .acceptance-board dl > div { grid-template-columns: 24px 1fr; }
     .acceptance-board dd:last-child { grid-column: 2; }
     .hero-chat-note { grid-template-columns: auto 1fr; align-items: start; gap: 12px; width: 100%; padding: 14px; box-shadow: 6px 6px 0 var(--blue-soft); }
-    .hero-chat-marks i { width: 30px; height: 30px; margin-left: -8px; font-size: 7px; }
+    .hero-chat-marks i { width: 30px; height: 30px; margin-left: -8px; }
+    .hero-chat-marks img { width: 16px; height: 16px; }
     .hero-chat-copy { grid-column: 1 / -1; gap: 3px; }
     .hero-chat-copy strong { font-size: 16px; }
     .hero-chat-copy > span { font-size: 11px; }

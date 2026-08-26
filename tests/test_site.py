@@ -154,6 +154,9 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn("Start the project in your chat.", homepage)
         self.assertIn("No form to fill.", homepage)
         self.assertNotIn("Bring Borage into your assistant", homepage)
+        for brand in ("openai", "claude", "mcp"):
+            self.assertIn(f'/assets/brands/{brand}.svg', homepage)
+            self.assertTrue((ROOT / "assets" / "brands" / f"{brand}.svg").exists())
         self.assertNotIn("Buyer view", homepage + script)
         self.assertNotIn("Professional view", homepage + script)
 

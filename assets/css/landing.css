@@ -192,7 +192,7 @@ body.landing-body {
 }
 
 .landing-hero {
-    padding: clamp(64px, 6vw, 92px) 0 0;
+    padding: clamp(30px, 3vw, 44px) 0 0;
 }
 
 .audience-switcher {
@@ -1522,7 +1522,7 @@ body.landing-body {
     .audience-status { font-size: 7px; letter-spacing: 0.06em; }
     .audience-switcher button { gap: 7px; }
     .audience-switcher button span { font-size: 11px; }
-    .landing-hero { padding-top: 52px; }
+    .landing-hero { padding-top: 30px; }
     .hero-actions { align-items: stretch; flex-direction: column; }
     .primary-cta { min-width: 0; }
     .secondary-cta { width: fit-content; }

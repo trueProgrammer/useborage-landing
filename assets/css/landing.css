@@ -110,7 +110,7 @@ body.landing-body {
 .brand-lockup small {
     color: var(--blue);
     font-family: var(--mono);
-    font-size: 7px;
+    font-size: 14px;
     font-weight: 850;
     letter-spacing: 0.18em;
     line-height: 1;
@@ -125,8 +125,8 @@ body.landing-body {
 }
 
 .brand-flower {
-    width: 31px;
-    height: 31px;
+    width: 42px;
+    height: 42px;
     overflow: visible;
     fill: var(--blue);
 }
@@ -374,6 +374,13 @@ body.landing-body {
     position: relative;
     min-height: 590px;
     isolation: isolate;
+}
+
+@media (min-width: 1101px) {
+    .hero-signal {
+        width: 110%;
+        margin-left: -10%;
+    }
 }
 
 .hero-signal::before {
@@ -1417,8 +1424,8 @@ body.landing-body {
 }
 
 @media (max-width: 520px) {
-    .brand-flower { width: 26px; height: 26px; }
-    .brand-lockup small { font-size: 6px; }
+    .brand-flower { width: 36px; height: 36px; }
+    .brand-lockup small { font-size: 12px; }
     .brand-lockup strong { font-size: 18px; }
     .small-cta span { display: none; }
     .small-cta [data-header-cta-label] { display: inline; }

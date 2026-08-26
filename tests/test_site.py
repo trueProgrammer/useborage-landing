@@ -151,6 +151,9 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn('id="chat"', homepage)
         self.assertIn("Add Borage as a plugin or MCP connection", homepage)
         self.assertIn("Keep the AI", homepage)
+        self.assertIn("Start the project in your chat.", homepage)
+        self.assertIn("No form to fill.", homepage)
+        self.assertNotIn("Bring Borage into your assistant", homepage)
         self.assertNotIn("Buyer view", homepage + script)
         self.assertNotIn("Professional view", homepage + script)
 

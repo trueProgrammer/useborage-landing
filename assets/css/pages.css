@@ -414,21 +414,53 @@ html,
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 12px;
-    width: fit-content;
-    margin-top: 18px;
-    padding: 9px 12px;
-    border: 1px solid var(--line-strong);
-    background: rgba(250, 249, 245, 0.68);
-    font-size: 11px;
-    font-weight: 700;
+    gap: 16px;
+    width: min(550px, 100%);
+    margin-top: 22px;
+    padding: 14px 16px;
+    border: 1px solid var(--ink);
+    background: var(--paper-bright);
+    box-shadow: 8px 8px 0 var(--blue-soft);
     text-decoration: none;
-    transition: background 160ms ease, transform 160ms ease;
+    transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.hero-chat-note:hover { background: var(--blue-soft); transform: translateY(-2px); }
-.hero-chat-note > span { color: var(--blue); font-family: var(--mono); font-size: 8px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-.hero-chat-note i { color: var(--blue); font-size: 15px; font-style: normal; }
+.hero-chat-note:hover { background: var(--acid-soft); box-shadow: 4px 4px 0 var(--blue); transform: translate(2px, 2px); }
+
+.hero-chat-marks { display: flex; align-items: center; }
+.hero-chat-marks i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-left: -10px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper-bright);
+    font-family: var(--mono);
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 850;
+}
+.hero-chat-marks i:first-child { margin-left: 0; background: var(--dark); color: white; }
+.hero-chat-marks i:nth-child(2) { background: var(--blue); color: white; }
+.hero-chat-marks i:last-child { background: var(--acid); color: var(--ink); }
+
+.hero-chat-copy { display: grid; gap: 2px; min-width: 0; }
+.hero-chat-copy small { color: var(--blue); font-family: var(--mono); font-size: 7px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.hero-chat-copy strong { font-size: 16px; letter-spacing: -.025em; line-height: 1.2; }
+.hero-chat-copy > span { color: var(--muted); font-size: 11px; line-height: 1.35; }
+
+.hero-chat-arrow {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--acid);
+    font-size: 17px;
+}
 
 .chat-native {
     display: grid;
@@ -637,8 +669,12 @@ html,
     .acceptance-board { padding-inline: 18px; }
     .acceptance-board dl > div { grid-template-columns: 24px 1fr; }
     .acceptance-board dd:last-child { grid-column: 2; }
-    .hero-chat-note { grid-template-columns: 1fr auto; }
-    .hero-chat-note > span { grid-column: 1 / -1; }
+    .hero-chat-note { grid-template-columns: auto 1fr; align-items: start; gap: 12px; width: 100%; padding: 14px; box-shadow: 6px 6px 0 var(--blue-soft); }
+    .hero-chat-marks i { width: 30px; height: 30px; margin-left: -8px; font-size: 7px; }
+    .hero-chat-copy { grid-column: 1 / -1; gap: 3px; }
+    .hero-chat-copy strong { font-size: 16px; }
+    .hero-chat-copy > span { font-size: 11px; }
+    .hero-chat-arrow { grid-column: 2; grid-row: 1; justify-self: end; width: 34px; height: 34px; font-size: 15px; }
     .assistant-connectors span { display: grid; gap: 1px; }
     .chat-native-shell { box-shadow: 7px 7px 0 var(--acid-soft); }
     .chat-message { max-width: 88%; margin: 16px; }

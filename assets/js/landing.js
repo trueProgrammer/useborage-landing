@@ -46,7 +46,7 @@
     const audienceCopy = {
         buyer: {
             pageTitle: "Borage | Managed Project Delivery for Business",
-            status: "Buyer view",
+            status: "You bring the need · Borage runs the project",
             heroEyebrow: "Managed project delivery",
             heroTitle: "Tell us what<br>you need. <em>Get it done.</em>",
             heroLede: "Tell Borage what you need. We define the project, find the right professional, manage the work, and check the result before you approve it.",
@@ -73,7 +73,7 @@
         },
         professional: {
             pageTitle: "Borage for Professionals | Clear Projects, Fair Terms",
-            status: "Professional view",
+            status: "You bring the expertise · Borage runs the process",
             heroEyebrow: "For independent professionals",
             heroTitle: "Do the work.<br><em>Not the chasing.</em>",
             heroLede: "Receive relevant, private invitations with the scope, fee range, date and acceptance criteria already clear. Borage manages the contract, reviews and follow-through around your work.",

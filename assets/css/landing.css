@@ -95,13 +95,16 @@ body.landing-body {
 .landing-wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     width: fit-content;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-size: 18px;
+    font-weight: 850;
+    line-height: 1;
+    letter-spacing: -0.055em;
     text-decoration: none;
 }
+
+.landing-wordmark > span { transform: translateY(1px); }
 
 .brand-flower {
     width: 31px;
@@ -196,7 +199,12 @@ body.landing-body {
     text-transform: uppercase;
 }
 
-.audience-prompt { border-right: 1px solid var(--ink); }
+.audience-prompt {
+    border-right: 1px solid var(--ink);
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+}
 .audience-status { justify-content: flex-end; color: var(--muted); }
 
 .audience-switcher > div {
@@ -1389,11 +1397,12 @@ body.landing-body {
 }
 
 @media (max-width: 520px) {
-    .landing-wordmark { font-size: 12px; }
+    .landing-wordmark { font-size: 16px; }
     .brand-flower { width: 26px; height: 26px; }
     .small-cta span { display: none; }
     .small-cta [data-header-cta-label] { display: inline; }
-    .audience-status { font-size: 7px; }
+    .audience-prompt { font-size: 10px; }
+    .audience-status { font-size: 7px; letter-spacing: 0.06em; }
     .audience-switcher button { gap: 7px; }
     .audience-switcher button span { font-size: 11px; }
     .landing-hero { padding-top: 46px; }

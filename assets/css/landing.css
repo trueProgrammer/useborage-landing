@@ -95,16 +95,34 @@ body.landing-body {
 .landing-wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
     width: fit-content;
-    font-size: 18px;
-    font-weight: 850;
-    line-height: 1;
-    letter-spacing: -0.055em;
     text-decoration: none;
 }
 
-.landing-wordmark > span { transform: translateY(1px); }
+.brand-lockup {
+    display: grid;
+    align-content: center;
+    gap: 2px;
+    transform: translateY(1px);
+}
+
+.brand-lockup small {
+    color: var(--blue);
+    font-family: var(--mono);
+    font-size: 7px;
+    font-weight: 850;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.brand-lockup strong {
+    font-size: 20px;
+    font-weight: 850;
+    letter-spacing: -0.065em;
+    line-height: 0.9;
+}
 
 .brand-flower {
     width: 31px;
@@ -294,6 +312,8 @@ body.landing-body {
     letter-spacing: -0.075em;
     line-height: 0.88;
 }
+
+.hero-copy h1 { font-size: clamp(50px, 5.6vw, 88px); }
 
 .hero-copy h1 em,
 .professional-copy h2 em {
@@ -1344,7 +1364,7 @@ body.landing-body {
     .text-link { display: none; }
     .small-cta { padding: 10px 12px; font-size: 11px; }
     .hero-grid { min-height: 0; }
-    .hero-copy h1 { font-size: clamp(48px, 15vw, 78px); }
+    .hero-copy h1 { font-size: clamp(44px, 13vw, 66px); }
     .hero-lede { font-size: 18px; }
     .hero-signal { min-height: 520px; }
     .signal-card { width: 62%; padding: 17px; }
@@ -1397,8 +1417,9 @@ body.landing-body {
 }
 
 @media (max-width: 520px) {
-    .landing-wordmark { font-size: 16px; }
     .brand-flower { width: 26px; height: 26px; }
+    .brand-lockup small { font-size: 6px; }
+    .brand-lockup strong { font-size: 18px; }
     .small-cta span { display: none; }
     .small-cta [data-header-cta-label] { display: inline; }
     .audience-prompt { font-size: 10px; }

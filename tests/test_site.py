@@ -144,6 +144,7 @@ class SiteQualityTests(unittest.TestCase):
     def test_homepage_audience_chooser_uses_plain_language(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "assets/js/landing.js").read_text(encoding="utf-8")
+        self.assertIn('<span class="brand-lockup"><small>Use</small><strong>Borage</strong></span>', homepage)
         self.assertIn("Choose how you want to use Borage", homepage)
         self.assertIn("You bring the need · Borage runs the project", homepage)
         self.assertIn("You bring the expertise · Borage runs the process", script)

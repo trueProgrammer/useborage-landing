@@ -141,13 +141,18 @@ class SiteQualityTests(unittest.TestCase):
             self.assertNotIn("£", text)
             self.assertNotIn("UK competitors", text)
 
-    def test_homepage_audience_chooser_uses_plain_language(self):
+    def test_homepage_has_one_clear_buyer_path(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "assets/js/landing.js").read_text(encoding="utf-8")
         self.assertIn('<span class="brand-lockup"><small>Use</small><strong>Borage</strong></span>', homepage)
-        self.assertIn("Choose how you want to use Borage", homepage)
-        self.assertIn("You bring the need · Borage runs the project", homepage)
-        self.assertIn("You bring the expertise · Borage runs the process", script)
+        self.assertIn("Tell Borage what you need", homepage)
+        self.assertIn("No job post. No profile search.", homepage)
+        self.assertIn("The project work you", homepage)
+        self.assertNotIn("data-audience-switcher", homepage)
+        self.assertNotIn("Get work done", homepage)
+        self.assertNotIn("Do great work", homepage)
+        self.assertNotIn("data-audience-button", homepage + script)
+        self.assertNotIn('class="professional-section"', homepage)
         self.assertIn('id="chat"', homepage)
         self.assertIn("Add Borage as a plugin or MCP connection", homepage)
         self.assertIn("Keep the AI", homepage)

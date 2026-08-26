@@ -192,7 +192,7 @@ body.landing-body {
 }
 
 .landing-hero {
-    padding: 34px 0 0;
+    padding: clamp(64px, 6vw, 92px) 0 0;
 }
 
 .audience-switcher {
@@ -271,10 +271,10 @@ body.landing-body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.03fr) minmax(470px, 0.97fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(500px, 1.05fr);
     align-items: center;
     gap: clamp(40px, 6vw, 100px);
-    min-height: 650px;
+    min-height: 610px;
 }
 
 .eyebrow {
@@ -328,7 +328,7 @@ body.landing-body {
 }
 
 .hero-lede {
-    max-width: 640px;
+    max-width: 620px;
     margin: 36px 0 0;
     color: var(--ink-soft);
     font-size: clamp(18px, 1.6vw, 24px);
@@ -524,7 +524,7 @@ body.landing-body {
 .proof-line {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 60px;
+    margin-top: 38px;
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--ink);
 }
@@ -542,7 +542,93 @@ body.landing-body {
 
 .proof-line span:last-child { border-right: 0; }
 
-.work-removed { padding: clamp(110px, 12vw, 190px) 0; }
+.work-removed { padding: clamp(90px, 8vw, 128px) 0; }
+
+.friction-compact-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(390px, 1.28fr) minmax(220px, 0.72fr);
+    margin-top: 58px;
+    border: 1px solid var(--ink);
+    background: var(--paper-bright);
+    box-shadow: 14px 14px 0 var(--blue-soft);
+}
+
+.friction-compact-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+    min-height: 390px;
+    padding: clamp(26px, 3vw, 44px);
+}
+
+.friction-compact-end small {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.friction-compact-end strong {
+    max-width: 260px;
+    font-size: clamp(24px, 2.2vw, 34px);
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+}
+
+.friction-compact-need { background: var(--paper-bright); }
+.friction-compact-result { background: var(--acid); }
+
+.friction-compact-list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+    list-style: none;
+}
+
+.friction-compact-list li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 34px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    min-height: 65px;
+    padding: 0 clamp(18px, 2vw, 30px);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.friction-compact-list li:last-child { border-bottom: 0; }
+.friction-compact-list li::after {
+    content: "";
+    position: absolute;
+    left: 67px;
+    right: 88px;
+    top: 51%;
+    height: 2px;
+    background: var(--orange);
+    transform: rotate(-0.8deg);
+}
+.friction-compact-list span,
+.friction-compact-list i {
+    font-family: var(--mono);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.friction-compact-list span { color: var(--muted); }
+.friction-compact-list p {
+    margin: 0;
+    color: #8e9691;
+    font-size: clamp(14px, 1.15vw, 17px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+.friction-compact-list i { color: var(--orange); font-style: normal; }
 
 .section-heading { max-width: 940px; }
 .section-heading h2 { font-size: clamp(48px, 5.7vw, 86px); }
@@ -827,7 +913,7 @@ body.landing-body {
 .resolved-final { justify-self: end; }
 
 .project-studio {
-    padding: clamp(92px, 10vw, 160px) max(32px, calc((100vw - 1436px) / 2));
+    padding: clamp(78px, 8vw, 118px) max(32px, calc((100vw - 1436px) / 2));
     background: var(--dark);
     color: white;
 }
@@ -1053,7 +1139,7 @@ body.landing-body {
 .studio-shell.is-working .scope-panel > *:not(.panel-topline) { opacity: 0.32; }
 .scope-panel > * { transition: opacity 200ms ease; }
 
-.simple-process { padding: clamp(110px, 12vw, 190px) 0; }
+.simple-process { padding: clamp(88px, 8vw, 128px) 0; }
 
 .section-heading.horizontal {
     display: grid;
@@ -1078,7 +1164,7 @@ body.landing-body {
 }
 
 .process-grid article {
-    min-height: 440px;
+    min-height: 390px;
     padding: 30px clamp(24px, 3vw, 50px);
     border-right: 1px solid var(--ink);
 }
@@ -1097,7 +1183,7 @@ body.landing-body {
     position: relative;
     width: 116px;
     height: 116px;
-    margin: 45px 0 50px;
+    margin: 36px 0 38px;
 }
 
 .describe-icon { border-radius: 50%; background: var(--acid); }
@@ -1123,7 +1209,7 @@ body.landing-body {
     grid-template-columns: 0.9fr 1.1fr;
     gap: clamp(60px, 10vw, 170px);
     align-items: center;
-    padding-bottom: clamp(110px, 12vw, 190px);
+    padding-bottom: clamp(88px, 8vw, 128px);
 }
 
 .offer-copy h2 { font-size: clamp(48px, 5.2vw, 80px); }
@@ -1381,6 +1467,9 @@ body.landing-body {
     .proof-line { grid-template-columns: 1fr 1fr; }
     .proof-line span:nth-child(2) { border-right: 0; }
     .proof-line span:nth-child(-n+2) { border-bottom: 1px solid var(--line-strong); }
+    .friction-compact-grid { grid-template-columns: 1fr; box-shadow: 9px 9px 0 var(--blue-soft); }
+    .friction-compact-end { min-height: 210px; gap: 50px; }
+    .friction-compact-list { border: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
     .friction-stage { grid-template-columns: 1fr; }
     .buyer-friction,
     .professional-friction,
@@ -1428,12 +1517,12 @@ body.landing-body {
     .brand-lockup small { font-size: 12px; }
     .brand-lockup strong { font-size: 18px; }
     .small-cta span { display: none; }
-    .small-cta [data-header-cta-label] { display: inline; }
+    .small-cta .cta-label { display: inline; }
     .audience-prompt { font-size: 10px; }
     .audience-status { font-size: 7px; letter-spacing: 0.06em; }
     .audience-switcher button { gap: 7px; }
     .audience-switcher button span { font-size: 11px; }
-    .landing-hero { padding-top: 46px; }
+    .landing-hero { padding-top: 52px; }
     .hero-actions { align-items: stretch; flex-direction: column; }
     .primary-cta { min-width: 0; }
     .secondary-cta { width: fit-content; }
@@ -1447,6 +1536,9 @@ body.landing-body {
     .studio-intro h2,
     .offer-copy h2 { font-size: 47px; }
     .friction-list li p { font-size: 13px; }
+    .friction-compact-list li { grid-template-columns: 25px 1fr; min-height: 59px; padding-inline: 14px; }
+    .friction-compact-list li::after { left: 49px; right: 12px; }
+    .friction-compact-list i { display: none; }
     .managed-rail { padding-inline: 12px; }
     .rail-badge { width: 74px; height: 74px; }
     .rail-badge svg { display: none; }

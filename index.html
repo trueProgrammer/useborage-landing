@@ -18,7 +18,7 @@
     <title>Borage | Managed Project Delivery for Business</title>
     <link rel="canonical" href="https://www.useborage.com/">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/landing.css?v=6">
+    <link rel="stylesheet" href="/assets/css/landing.css?v=7">
     <link rel="stylesheet" href="/assets/css/pages.css?v=5">
     <script type="application/ld+json">
     {
@@ -44,7 +44,7 @@
     }
     </script>
 </head>
-<body class="landing-body" data-audience="buyer">
+<body class="landing-body">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="landing-header" data-landing-header>
@@ -59,42 +59,28 @@
         <nav class="landing-nav" aria-label="Main navigation">
             <a href="#outcomes">Services</a>
             <a href="/how-it-works" data-how-link>How it works</a>
-            <a class="audience-buyer-only" href="#chat">Chat + MCP</a>
+            <a href="#chat">Chat + MCP</a>
             <a href="/for-professionals">For professionals</a>
         </nav>
 
         <div class="header-actions">
             <a class="text-link" href="/sign-in">Sign in</a>
-            <a class="small-cta" href="#describe" data-header-cta><span data-header-cta-label>Start a project</span> <span aria-hidden="true">↗</span></a>
+            <a class="small-cta" href="#describe"><span class="cta-label">Tell Borage</span> <span aria-hidden="true">↗</span></a>
         </div>
     </header>
 
     <main id="main-content">
         <section class="landing-hero" id="top">
-            <div class="audience-switcher" data-audience-switcher data-reveal>
-                <span class="audience-prompt">I’m here to</span>
-                <div role="group" aria-label="Choose how you want to use Borage">
-                    <button type="button" class="is-active" data-audience-button="buyer" aria-pressed="true">
-                        <small>01</small><span>Get work done</span>
-                    </button>
-                    <button type="button" data-audience-button="professional" aria-pressed="false">
-                        <small>02</small><span>Do great work</span>
-                    </button>
-                </div>
-                <span class="audience-status" aria-live="polite" data-audience-status>You bring the need · Borage runs the project</span>
-            </div>
-
             <div class="hero-grid">
                 <div class="hero-copy" data-reveal>
-                    <p class="eyebrow"><span></span> <b data-hero-eyebrow>Managed project delivery</b></p>
-                    <h1 data-hero-title>Tell us what<br>you need. <em>Get it done.</em></h1>
-                    <p class="hero-lede" data-hero-lede>Tell Borage what you need. We define the project, find the right professional, manage the work, and check the result before you approve it.</p>
+                    <p class="eyebrow"><span></span> Managed project delivery</p>
+                    <h1>Tell us what<br>you need. <em>Get it done.</em></h1>
+                    <p class="hero-lede">Give Borage the outcome, deadline, and any files you have. We define the brief, find the right professional, manage delivery, and return finished work ready to approve.</p>
                     <div class="hero-actions">
-                        <a class="primary-cta" href="#describe" data-hero-primary><span data-hero-primary-label>Describe your project</span> <span aria-hidden="true">↗</span></a>
-                        <a class="secondary-cta" href="#work-removed">See what disappears <span aria-hidden="true">↓</span></a>
+                        <a class="primary-cta" href="#describe"><span>Tell Borage what you need</span> <span aria-hidden="true">↗</span></a>
                     </div>
-                    <p class="hero-reassurance" data-hero-reassurance>No job post. No candidate search. No obligation to proceed.</p>
-                    <a class="hero-chat-note audience-buyer-only" href="#chat">
+                    <p class="hero-reassurance">No job post. No profile search. No obligation to proceed.</p>
+                    <a class="hero-chat-note" href="#chat">
                         <span class="hero-chat-marks" aria-hidden="true">
                             <i><img src="/assets/brands/openai.svg" alt=""></i>
                             <i><img src="/assets/brands/claude.svg" alt=""></i>
@@ -113,8 +99,8 @@
                     <div class="signal-orbit orbit-one"></div>
                     <div class="signal-orbit orbit-two"></div>
                     <div class="signal-card signal-request">
-                        <span class="signal-label" data-signal-request-label>01 · Your request</span>
-                        <p data-signal-request-copy>“We need the cup artwork ready for our printer by September.”</p>
+                        <span class="signal-label">01 · Your request</span>
+                        <p>“We need the cup artwork ready for our printer by September.”</p>
                     </div>
                     <div class="signal-line" aria-hidden="true"><span></span></div>
                     <div class="signal-core">
@@ -145,137 +131,33 @@
 
         <section class="work-removed" id="work-removed" data-work-removed>
             <div class="section-heading" data-reveal>
-                <p class="eyebrow"><span></span> <b data-friction-eyebrow>The work around the work</b></p>
-                <h2 data-friction-title>Two simple facts. One<br>needlessly complicated process.</h2>
-                <p data-friction-description>A business needs a result. A professional has the expertise to deliver it. Everything in between is the work around the work.</p>
+                <p class="eyebrow"><span></span> The work around the work</p>
+                <h2>The project work you<br>should not have to manage.</h2>
+                <p>You bring the outcome. Borage takes responsibility for turning it into a clear, staffed, managed project.</p>
             </div>
 
-            <div data-friction-view="buyer">
-                <div class="friction-stage" data-reveal>
-                    <div class="friction-column buyer-friction">
-                        <div class="friction-heading">
-                            <span class="person-dot buyer-dot" aria-hidden="true">C</span>
-                            <div><small>The client</small><h3>A business needs a result.</h3></div>
-                        </div>
-                        <ol class="friction-list">
-                            <li data-friction-item="buyer"><span>01</span><p>Work out who to call</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>02</span><p>Fill in another job form</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>03</span><p>Learn which specialist you need</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>04</span><p>Source and screen 100 candidates</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>05</span><p>Compare portfolios and proposals</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>06</span><p>Negotiate scope, fee and timing</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>07</span><p>Write a contract and chase progress</p><i>removed</i></li>
-                        </ol>
-                    </div>
-
-                    <div class="managed-rail" aria-label="Borage managed path">
-                        <span class="rail-top">Need</span>
-                        <div class="rail-line"><i></i></div>
-                        <div class="rail-badge">
-                            <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 1.5c3.2 5.1 3.3 8.9.2 11.5 3.5-2.1 7.1-1.2 11.3 2.8-5.6 2.3-9.4 1.7-11.2-1.9.5 4-1.7 7-7 9.4.4-6 2.7-9 6.8-8.9-3.9-1-5.7-4.2-5.6-10.2 4.9 3.5 6.4 7 4.4 10.5-2.7-3-2.3-6.8 1.1-13.2Z"/></svg>
-                            <span>Managed<br>by Borage</span>
-                        </div>
-                        <div class="rail-line"><i></i></div>
-                        <span class="rail-bottom">Done</span>
-                    </div>
-
-                    <div class="friction-column professional-friction">
-                        <div class="friction-heading">
-                            <span class="person-dot professional-dot" aria-hidden="true">P</span>
-                            <div><small>The professional</small><h3>A specialist has the expertise to deliver it.</h3></div>
-                        </div>
-                        <ol class="friction-list">
-                            <li data-friction-item="buyer"><span>01</span><p>Decode an unclear request</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>02</span><p>Ask the same questions again</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>03</span><p>Wait weeks for files and answers</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>04</span><p>Quote without knowing the real scope</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>05</span><p>Negotiate every term from scratch</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>06</span><p>Wait for each review and decision</p><i>removed</i></li>
-                            <li data-friction-item="buyer"><span>07</span><p>Push for feedback and payment</p><i>removed</i></li>
-                        </ol>
-                    </div>
-
-                    <button class="replay-friction" type="button" data-replay-friction aria-label="Replay work removal animation">
-                        Replay <span aria-hidden="true">↻</span>
-                    </button>
+            <div class="friction-compact-grid" data-reveal>
+                <div class="friction-compact-end friction-compact-need">
+                    <small>You bring</small>
+                    <strong>The outcome, deadline, and files you have.</strong>
                 </div>
-
-                <div class="resolved-path" data-reveal>
-                    <span class="resolved-intro">What remains</span>
-                    <div><small>01</small><strong>One request</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div><small>02</small><strong>One clear offer</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div><small>03</small><strong>Managed delivery</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div class="resolved-final"><small>04</small><strong>Accepted work</strong></div>
+                <ol class="friction-compact-list" aria-label="Project management work handled by Borage">
+                    <li><span>01</span><p>Define the scope</p><i>handled</i></li>
+                    <li><span>02</span><p>Find the right specialist</p><i>handled</i></li>
+                    <li><span>03</span><p>Compare and confirm terms</p><i>handled</i></li>
+                    <li><span>04</span><p>Contract and coordinate</p><i>handled</i></li>
+                    <li><span>05</span><p>Track delivery and decisions</p><i>handled</i></li>
+                    <li><span>06</span><p>Check the result and revisions</p><i>handled</i></li>
+                </ol>
+                <div class="friction-compact-end friction-compact-result">
+                    <small>You receive</small>
+                    <strong>Finished work, checked and ready to approve.</strong>
                 </div>
             </div>
 
-            <div data-friction-view="professional" hidden>
-                <div class="friction-stage professional-friction-stage" data-reveal>
-                    <div class="friction-column pro-pain-friction">
-                        <div class="friction-heading">
-                            <span class="person-dot professional-dot" aria-hidden="true">P</span>
-                            <div><small>Without Borage</small><h3>The admin becomes a second job.</h3></div>
-                        </div>
-                        <ol class="friction-list">
-                            <li data-friction-item="professional"><span>01</span><p>Search for properly formed briefs</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>02</span><p>Decode vague scope before quoting</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>03</span><p>Ask repeatedly for files and answers</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>04</span><p>Negotiate every contract from scratch</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>05</span><p>Absorb quiet changes to the scope</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>06</span><p>Wait through open-ended reviews</p><i>removed</i></li>
-                            <li data-friction-item="professional"><span>07</span><p>Chase decisions and payment status</p><i>removed</i></li>
-                        </ol>
-                    </div>
-
-                    <div class="managed-rail professional-rail" aria-label="Borage protected professional path">
-                        <span class="rail-top">Invite</span>
-                        <div class="rail-line"><i></i></div>
-                        <div class="rail-badge">
-                            <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 1.5c3.2 5.1 3.3 8.9.2 11.5 3.5-2.1 7.1-1.2 11.3 2.8-5.6 2.3-9.4 1.7-11.2-1.9.5 4-1.7 7-7 9.4.4-6 2.7-9 6.8-8.9-3.9-1-5.7-4.2-5.6-10.2 4.9 3.5 6.4 7 4.4 10.5-2.7-3-2.3-6.8 1.1-13.2Z"/></svg>
-                            <span>Protected<br>by Borage</span>
-                        </div>
-                        <div class="rail-line"><i></i></div>
-                        <span class="rail-bottom">Paid</span>
-                    </div>
-
-                    <div class="friction-column professional-benefit">
-                        <div class="friction-heading">
-                            <span class="person-dot benefit-dot" aria-hidden="true">✓</span>
-                            <div><small>With Borage</small><h3>The project arrives ready.</h3></div>
-                        </div>
-                        <ol class="benefit-list">
-                            <li><span>01</span><p>A relevant private invitation</p><i>ready</i></li>
-                            <li><span>02</span><p>Exact deliverables and criteria</p><i>clear</i></li>
-                            <li><span>03</span><p>Fee range and date visible</p><i>clear</i></li>
-                            <li><span>04</span><p>Required files gathered</p><i>ready</i></li>
-                            <li><span>05</span><p>Contract built from agreed terms</p><i>locked</i></li>
-                            <li><span>06</span><p>Review and revision window defined</p><i>bounded</i></li>
-                            <li><span>07</span><p>Decisions and payment status visible</p><i>visible</i></li>
-                        </ol>
-                    </div>
-
-                    <button class="replay-friction" type="button" data-replay-friction aria-label="Replay professional work removal animation">
-                        Replay <span aria-hidden="true">↻</span>
-                    </button>
-                </div>
-
-                <div class="resolved-path professional-resolved" data-reveal>
-                    <span class="resolved-intro">What remains</span>
-                    <div><small>01</small><strong>Private invitation</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div><small>02</small><strong>Clear terms</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div><small>03</small><strong>Focused work</strong></div>
-                    <i aria-hidden="true">→</i>
-                    <div class="resolved-final"><small>04</small><strong>Visible payment</strong></div>
-                </div>
-            </div>
         </section>
 
-        <section class="project-studio audience-buyer-only" id="describe">
+        <section class="project-studio" id="describe">
             <div class="studio-intro" data-reveal>
                 <p class="eyebrow light"><span></span> From vague to ready</p>
                 <h2>Start with the outcome.<br>We’ll handle the project.</h2>
@@ -323,7 +205,7 @@
             </div>
         </section>
 
-        <section class="simple-process audience-buyer-only" id="how-it-works">
+        <section class="simple-process" id="how-it-works">
             <div class="section-heading horizontal" data-reveal>
                 <div>
                     <p class="eyebrow"><span></span> Simple outside. Disciplined underneath.</p>
@@ -357,7 +239,7 @@
             </div>
         </section>
 
-        <section class="outcome-index audience-buyer-only" id="outcomes">
+        <section class="outcome-index" id="outcomes">
             <div class="outcome-heading" data-reveal>
                 <div>
                     <p class="eyebrow"><span></span> Start with the result</p>
@@ -387,7 +269,7 @@
             </div>
         </section>
 
-        <section class="offer-section audience-buyer-only">
+        <section class="offer-section">
             <div class="offer-copy" data-reveal>
                 <p class="eyebrow"><span></span> Not a marketplace</p>
                 <h2>One decision.<br>Not a proposal pile.</h2>
@@ -419,7 +301,7 @@
             </div>
         </section>
 
-        <section class="chat-native audience-buyer-only" id="chat">
+        <section class="chat-native" id="chat">
             <div class="chat-native-copy" data-reveal>
                 <p class="eyebrow"><span></span> Bring your own AI</p>
                 <h2>Keep the AI<br><em>you already pay for.</em></h2>
@@ -442,30 +324,6 @@
                     <div><small>01</small><strong>Describe</strong><span>In your chat</span></div>
                     <div><small>02</small><strong>Borage runs it</strong><span>Scope · source · manage</span></div>
                     <div><small>03</small><strong>Review</strong><span>Finished work</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="professional-section" id="professionals">
-            <div class="professional-copy" data-reveal>
-                <p class="eyebrow light"><span></span> For independent professionals</p>
-                <h2>Do the work.<br><em>Not the chasing.</em></h2>
-                <p>Receive private project invitations with the scope, fee range, deadline and acceptance criteria already visible. Set your terms, accept one clear contract, and deliver through a structured process.</p>
-                <a href="/sign-in" class="professional-cta">Join the professional network <span aria-hidden="true">↗</span></a>
-            </div>
-            <div class="professional-board" data-reveal>
-                <div class="board-header"><span>Private project invitation</span><i>New</i></div>
-                <h3>Packaging artwork production</h3>
-                <dl>
-                    <div><dt>Scope</dt><dd>Clear</dd></div>
-                    <div><dt>Fee range</dt><dd>Visible</dd></div>
-                    <div><dt>Files</dt><dd>Attached</dd></div>
-                    <div><dt>Review window</dt><dd>Defined</dd></div>
-                </dl>
-                <div class="professional-promises">
-                    <span>No public bid wall</span>
-                    <span>No unpaid pitch</span>
-                    <span>No silent scope changes</span>
                 </div>
             </div>
         </section>
@@ -496,32 +354,14 @@
                 </details>
             </div>
 
-            <div class="faq-list faq-professional" data-audience-faq="professional" data-reveal>
-                <details>
-                    <summary><span>01</span><strong>Is this a public bidding marketplace?</strong><i aria-hidden="true"></i></summary>
-                    <p>No. Invitations are private and relevant to your experience. There is no public bid wall, price race, or requirement to produce an unpaid pitch.</p>
-                </details>
-                <details>
-                    <summary><span>02</span><strong>What can I see before responding?</strong><i aria-hidden="true"></i></summary>
-                    <p>The scope, deliverables, acceptance criteria, fee range, delivery date, available files, response deadline, and known assumptions are visible before you decide.</p>
-                </details>
-                <details>
-                    <summary><span>03</span><strong>Who controls the final terms?</strong><i aria-hidden="true"></i></summary>
-                    <p>You confirm your availability and respond privately with your terms. Nothing becomes agreed until the exact scope, fee, timing, and responsibilities are clear.</p>
-                </details>
-                <details>
-                    <summary><span>04</span><strong>How are changes and payment handled?</strong><i aria-hidden="true"></i></summary>
-                    <p>Material scope changes require a separate approved change. Your exact payment terms appear before you accept, and the project shows the current payment status without asking you to chase it.</p>
-                </details>
-            </div>
         </section>
 
         <section class="final-cta" data-reveal>
             <div>
-                <p data-final-kicker>Whatever is sitting on your list—</p>
-                <h2 data-final-title>What needs<br>to be done?</h2>
+                <p>Whatever is sitting on your list—</p>
+                <h2>What needs<br>to be done?</h2>
             </div>
-            <a href="#describe" data-final-cta><span data-final-cta-label>Tell Borage</span> <span aria-hidden="true">↗</span></a>
+            <a href="#describe"><span>Tell Borage</span> <span aria-hidden="true">↗</span></a>
             <div class="final-orbit" aria-hidden="true">
                 <svg viewBox="0 0 34 34"><path d="M17 1.5c3.2 5.1 3.3 8.9.2 11.5 3.5-2.1 7.1-1.2 11.3 2.8-5.6 2.3-9.4 1.7-11.2-1.9.5 4-1.7 7-7 9.4.4-6 2.7-9 6.8-8.9-3.9-1-5.7-4.2-5.6-10.2 4.9 3.5 6.4 7 4.4 10.5-2.7-3-2.3-6.8 1.1-13.2Z"/></svg>
             </div>
@@ -538,6 +378,6 @@
         <small>© 2026 Borage</small>
     </footer>
 
-    <script src="/assets/js/landing.js?v=4" defer></script>
+    <script src="/assets/js/landing.js?v=5" defer></script>
 </body>
 </html>

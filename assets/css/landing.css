@@ -313,7 +313,7 @@ body.landing-body {
     line-height: 0.88;
 }
 
-.hero-copy h1 { font-size: clamp(50px, 5.6vw, 88px); }
+.hero-copy h1 { font-size: clamp(40px, 4.5vw, 70px); }
 
 .hero-copy h1 em,
 .professional-copy h2 em {
@@ -513,7 +513,30 @@ body.landing-body {
 }
 
 .hero-visual {
+    position: relative;
     min-width: 0;
+}
+
+.hero-visual-kicker {
+    position: absolute;
+    top: 7px;
+    left: 1%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 760;
+    letter-spacing: -0.025em;
+}
+
+.hero-visual-kicker::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
 }
 
 .hero-orchestration {
@@ -749,89 +772,32 @@ body.landing-body {
     background: rgba(250, 249, 245, 0.94);
     box-shadow: 5px 5px 0 rgba(23, 33, 29, 0.08);
 }
-.pro-portrait {
-    position: relative;
-    display: block;
+.pro-role-icon {
+    display: grid;
+    place-items: center;
     width: 36px;
     height: 36px;
     flex: 0 0 auto;
-    overflow: hidden;
     border: 1px solid var(--ink);
-    border-radius: 50%;
-    background: var(--blue-soft);
+    border-radius: 8px;
+    color: var(--ink);
 }
-.pro-portrait::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    width: 11px;
-    height: 12px;
-    border-radius: 48% 48% 44% 44%;
-    background: var(--ink);
-    transform: translateX(-50%);
-}
-.pro-portrait i {
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    width: 27px;
+.pro-role-icon svg {
+    width: 21px;
     height: 21px;
-    border-radius: 50% 50% 0 0;
-    background: var(--ink);
-    transform: translateX(-50%);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
-.pro-portrait > b { position: absolute; z-index: 2; display: block; }
-.artist-portrait { background: #ffe8df; }
-.artist-portrait > b {
-    top: 4px;
-    left: 10px;
-    width: 17px;
-    height: 7px;
-    border-radius: 60% 45% 40% 55%;
-    background: var(--orange);
-    transform: rotate(-8deg);
-}
-.cap-portrait { background: var(--blue); }
-.cap-portrait::before,
-.cap-portrait i { background: white; }
-.cap-portrait > b {
-    top: 4px;
-    left: 10px;
-    width: 17px;
-    height: 8px;
-    border-radius: 8px 8px 2px 2px;
-    background: var(--acid);
-}
-.cap-portrait > b::after {
-    content: "";
-    position: absolute;
-    right: -6px;
-    bottom: -2px;
-    width: 11px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--acid);
-    transform: rotate(7deg);
-}
-.engineer-portrait { background: #e7eef0; }
-.engineer-portrait > b {
-    top: 4px;
-    left: 8px;
-    width: 20px;
-    height: 9px;
-    border-radius: 12px 12px 2px 2px;
-    border-bottom: 2px solid var(--ink);
-    background: #ffc95b;
-}
-.engineer-portrait > b::after {
-    content: "";
-    position: absolute;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    height: 2px;
-    background: var(--ink);
+.pro-role-icon svg circle:not(:last-child) { fill: currentColor; stroke: none; }
+.artist-role-icon { background: #ffe8df; color: #b74e3f; }
+.packaging-role-icon { background: var(--blue); color: white; }
+.engineer-role-icon { background: #e7eef0; color: #3f585d; }
+.engineer-role-icon svg circle:last-child {
+    fill: rgba(216, 255, 104, 0.72);
+    stroke: currentColor;
 }
 .professional-card > div { display: grid; gap: 2px; }
 .professional-card strong { font-size: 11px; white-space: nowrap; }
@@ -1807,7 +1773,7 @@ body.landing-body {
     .text-link { display: none; }
     .small-cta { padding: 10px 12px; font-size: 11px; }
     .hero-grid { min-height: 0; }
-    .hero-copy h1 { font-size: clamp(44px, 13vw, 66px); }
+    .hero-copy h1 { font-size: clamp(35px, 10.4vw, 53px); }
     .hero-lede { font-size: 17px; }
     .hero-signal { min-height: 520px; }
     .hero-orchestration {
@@ -1821,6 +1787,14 @@ body.landing-body {
         gap: 10px 14px;
         min-height: 575px;
         padding-top: 18px;
+    }
+    .hero-visual-kicker {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        margin: 10px 0 -4px;
+        font-size: 11px;
     }
     .orchestration-paths { display: none; }
     .buyer-station {
@@ -1852,8 +1826,8 @@ body.landing-body {
     }
     .field-label { left: 0; right: auto; font-size: 7px; }
     .professional-card { width: 148px; padding: 7px 8px; }
-    .professional-card .pro-portrait { width: 30px; height: 30px; }
-    .professional-card .pro-portrait::before { top: 7px; }
+    .professional-card .pro-role-icon { width: 30px; height: 30px; }
+    .professional-card .pro-role-icon svg { width: 18px; height: 18px; }
     .professional-card strong { font-size: 9px; }
     .professional-card small { font-size: 6px; }
     .professional-card > b { width: 18px; height: 18px; }

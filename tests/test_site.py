@@ -154,11 +154,15 @@ class SiteQualityTests(unittest.TestCase):
         self.assertIn("The project work you", homepage)
         self.assertIn('class="hero-orchestration"', homepage)
         self.assertIn("Running the project", homepage)
+        self.assertIn("Work without the workload", homepage)
         self.assertIn("Selected by Borage", homepage)
         self.assertIn("Artwork checked", homepage)
         for role in ("Brand artist", "Packaging designer", "Production engineer"):
             self.assertIn(role, homepage)
         self.assertNotIn("3D specialist", homepage)
+        self.assertNotIn('class="pro-portrait', homepage)
+        for role_icon in ("artist-role-icon", "packaging-role-icon", "engineer-role-icon"):
+            self.assertIn(role_icon, homepage)
         self.assertIn('/assets/agentura-hero-cutout.png', homepage)
         self.assertTrue((ROOT / "assets" / "agentura-hero-cutout.png").exists())
         self.assertNotIn('class="signal-orbit', homepage)

@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -10,13 +11,39 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = {
     "/": ROOT / "index.html",
     "/how-it-works": ROOT / "how-it-works.html",
+    "/managed-project-delivery": ROOT / "managed-project-delivery.html",
+    "/how-pricing-works": ROOT / "how-pricing-works.html",
+    "/services": ROOT / "services/index.html",
     "/services/presentation-design": ROOT / "services/presentation-design.html",
+    "/services/pitch-deck-design": ROOT / "services/pitch-deck-design.html",
+    "/services/sales-presentation-design": ROOT / "services/sales-presentation-design.html",
     "/services/packaging-label-design": ROOT / "services/packaging-label-design.html",
+    "/services/packaging-artwork-production": ROOT / "services/packaging-artwork-production.html",
     "/services/3d-rendering-product-animation": ROOT / "services/3d-rendering-product-animation.html",
+    "/services/3d-product-rendering": ROOT / "services/3d-product-rendering.html",
+    "/services/3d-product-animation": ROOT / "services/3d-product-animation.html",
+    "/compare/managed-delivery-vs-freelance-marketplaces": ROOT / "compare/managed-delivery-vs-freelance-marketplaces.html",
+    "/compare/borage-vs-upwork": ROOT / "compare/borage-vs-upwork.html",
+    "/compare/borage-vs-fiverr-pro": ROOT / "compare/borage-vs-fiverr-pro.html",
     "/integrations/chatgpt-claude-mcp": ROOT / "integrations/chatgpt-claude-mcp.html",
     "/for-professionals": ROOT / "for-professionals.html",
     "/privacy": ROOT / "privacy.html",
     "/terms": ROOT / "terms.html",
+}
+
+SUBSTANTIAL_CONTENT_ROUTES = {
+    "/managed-project-delivery",
+    "/how-pricing-works",
+    "/services",
+    "/services/pitch-deck-design",
+    "/services/sales-presentation-design",
+    "/services/packaging-artwork-production",
+    "/services/3d-product-rendering",
+    "/services/3d-product-animation",
+    "/compare/managed-delivery-vs-freelance-marketplaces",
+    "/compare/borage-vs-upwork",
+    "/compare/borage-vs-fiverr-pro",
+    "/integrations/chatgpt-claude-mcp",
 }
 
 
@@ -27,10 +54,13 @@ class PageParser(HTMLParser):
         self.title = ""
         self._in_title = False
         self.h1_count = 0
+        self.h2_count = 0
         self.description = None
+        self.robots = None
         self.canonical = None
         self.links = []
         self.json_ld = []
+        self.visible_text = []
         self._in_json_ld = False
         self._json_buffer = []
 
@@ -42,8 +72,12 @@ class PageParser(HTMLParser):
             self._in_title = True
         elif tag == "h1":
             self.h1_count += 1
+        elif tag == "h2":
+            self.h2_count += 1
         elif tag == "meta" and values.get("name") == "description":
             self.description = values.get("content")
+        elif tag == "meta" and values.get("name") == "robots":
+            self.robots = values.get("content")
         elif tag == "link" and values.get("rel") == "canonical":
             self.canonical = values.get("href")
         elif tag == "a" and values.get("href"):
@@ -64,6 +98,8 @@ class PageParser(HTMLParser):
             self.title += data
         if self._in_json_ld:
             self._json_buffer.append(data)
+        else:
+            self.visible_text.append(data)
 
 
 def parse_page(path):
@@ -82,10 +118,12 @@ class SiteQualityTests(unittest.TestCase):
                 page = parse_page(path)
                 self.assertEqual(page.lang, "en-US")
                 self.assertEqual(page.h1_count, 1)
+                self.assertEqual(page.robots, "index,follow,max-image-preview:large")
                 self.assertTrue(20 <= len(page.title.strip()) <= 70)
                 self.assertTrue(50 <= len(page.description or "") <= 180)
                 expected = "https://www.useborage.com/" if route == "/" else f"https://www.useborage.com{route}"
                 self.assertEqual(page.canonical, expected)
+                self.assertTrue(page.json_ld)
                 titles.add(page.title.strip())
                 descriptions.add(page.description)
                 for block in page.json_ld:
@@ -105,6 +143,20 @@ class SiteQualityTests(unittest.TestCase):
                 with self.subTest(source=route, href=href):
                     self.assertTrue(target in PUBLIC_PAGES or target in allowed_virtual_routes)
 
+    def test_search_pages_have_substantial_visible_copy(self):
+        for route in SUBSTANTIAL_CONTENT_ROUTES:
+            with self.subTest(route=route):
+                source = PUBLIC_PAGES[route].read_text(encoding="utf-8")
+                page = parse_page(PUBLIC_PAGES[route])
+                words = re.findall(r"\b[\w'’-]+\b", " ".join(page.visible_text))
+                self.assertGreaterEqual(len(words), 500)
+                self.assertGreaterEqual(page.h2_count, 4)
+                self.assertLess(PUBLIC_PAGES[route].stat().st_size, 100_000)
+                self.assertIn('class="choice-grid"', source)
+                self.assertIn('class="choice-card before"', source)
+                self.assertIn('class="choice-card after"', source)
+                self.assertIn("chat", source.lower())
+
     def test_sitemap_contains_only_canonical_public_pages(self):
         tree = ET.parse(ROOT / "sitemap.xml")
         namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -118,6 +170,11 @@ class SiteQualityTests(unittest.TestCase):
     def test_robots_and_vercel_configuration(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("User-agent: *\nAllow: /", robots)
+        self.assertIn("User-agent: OAI-SearchBot\nAllow: /", robots)
+        self.assertIn("User-agent: GPTBot\nDisallow: /", robots)
+        self.assertIn("User-agent: Claude-SearchBot\nAllow: /", robots)
+        self.assertIn("User-agent: Claude-User\nAllow: /", robots)
+        self.assertIn("User-agent: ClaudeBot\nDisallow: /", robots)
         self.assertIn("Sitemap: https://www.useborage.com/sitemap.xml", robots)
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         self.assertFalse(config["trailingSlash"])

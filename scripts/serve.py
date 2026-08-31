@@ -9,6 +9,10 @@ from pathlib import Path
 class CleanUrlHandler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
         resolved = Path(super().translate_path(path))
+        if resolved.is_dir() and not path.endswith("/"):
+            index_file = resolved / "index.html"
+            if index_file.is_file():
+                return str(index_file)
         if not resolved.exists() and not resolved.suffix:
             html_file = resolved.with_suffix(".html")
             if html_file.is_file():

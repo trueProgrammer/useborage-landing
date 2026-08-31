@@ -145,6 +145,8 @@ class SiteQualityTests(unittest.TestCase):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "assets/js/landing.js").read_text(encoding="utf-8")
         self.assertIn('<span class="brand-lockup"><small>Use</small><strong>Borage</strong></span>', homepage)
+        self.assertIn("Borage | Get Creative &amp; Specialist Work Done", homepage)
+        self.assertNotIn("Managed Project Delivery for Business", homepage)
         self.assertIn("Tell Borage what you need", homepage)
         self.assertIn("Start a project", homepage)
         for reassurance in ("No job post", "No profile search", "No obligation to proceed"):
